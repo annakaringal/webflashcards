@@ -1,0 +1,10 @@
+get '/home'
+get '/signup'
+get '/home/:user_name'
+get '/:user_name/:round_id/:card_id'
+get '/:user_name/:round_id/results'
+get '/logout'
+
+post '/post'
+post '/signup'
+post '/:user_name/:round_id/:card_id'
