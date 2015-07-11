@@ -1,4 +1,9 @@
-<h2>User profile</h2>
+<h1>Welcome, <%= @user.user_name %>!</h1>
 
+<h3>Choose a deck to begin playing:</h3>
+<div class="decks">
+  <%= erb :'partials/_decks', :layout => false, :locals => { :decks => @decks }%>
+</div>
 
-<%= erb :'partials/_decks', :layout => false, :locals => { :decks => @decks }%>
+<div class="user_rounds">
+</div>

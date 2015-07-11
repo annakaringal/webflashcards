@@ -1,6 +1,6 @@
-<h2> Here are your results! </h2>
+<h1>YOUR SCORE: <%= @score %> </h1>
 
-<div class="round_summary"
+<div class="round_summary">
   <% @round.guesses.each do |guess| %>
     <% card = guess.card %>
     <div class="question"><%= card.question %></div>

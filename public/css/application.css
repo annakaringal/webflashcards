@@ -48,7 +48,7 @@ footer {
 }
 
 a {
-    color: #fff;
+    color: #007CA5;
     text-decoration: none;
 }
 
@@ -57,3 +57,38 @@ a:hover {
     text-decoration: underline;
 }
 
+.decks li {
+    list-style-type: none;
+    display: inline-block;
+    border: 1px solid black;
+    padding:20px;
+    background-color: #00A6E8;
+}
+
+.decks li:hover {
+    background-color: #8FBF00;
+}
+
+.decks li a {
+    font-weight:800;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    font-family: Khula, sans-serif;
+    color: #FCFCFF;
+    display: block;
+}
+
+.decks li a:hover {
+    text-decoration: none;
+    color:black;
+}
+
+.play_round h3 {
+    color: #007CA5
+}
+
+.play_round .card {
+    display:block;
+    padding:20px;
+    background-color:#ccc;
+}
