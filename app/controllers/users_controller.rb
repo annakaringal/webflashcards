@@ -36,7 +36,7 @@ post '/users/signup' do
 end
 
 get '/users/:user_name' do
-  user = User.find_by_user_name(params[:user_name])
+  @user = User.find_by_user_name(params[:user_name])
   @decks = Deck.all
   erb :'/user/profile'
 end
