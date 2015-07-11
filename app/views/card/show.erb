@@ -2,9 +2,9 @@
 
 <div class='question'><%= @card.question %></div>
 
-<form action='/guess' method='post' >
+<form action='/guess/<%= @guess.id %>' method='post' >
   <input type='text' name='guess[user_answer]' placeholder='Type your answer' />
-  <input type='hidden' name='guess[round_id]' value='<%= @round.id %>' />
-  <input type='hidden' name='guess[card_id]' value='<%= @card.id %>' />
+  <input type='hidden' name='_method' value='put' />
+  <!-- <input type='hidden' name='guess[card_id]' value='<#%= @card.id %>' /> -->
   <input type='submit' value='Submit' />
 </form>

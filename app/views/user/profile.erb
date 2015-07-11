@@ -1,3 +1,4 @@
 <h2>User profile</h2>
 
-<a href="/users/logout">Logout</a>
+
+<%= erb :'partials/_decks', :layout => false, :locals => { :decks => @decks }%>

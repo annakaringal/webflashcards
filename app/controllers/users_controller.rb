@@ -28,7 +28,8 @@ end
 post '/users/signup' do
   user = User.new(params[:user])
   if user.save
-    redirect '/users/login'
+    session[:user_id] = user.id
+    redirect "/users/#{user.user_name}"
   else
     redirect '/'
   end
@@ -36,6 +37,7 @@ end
 
 get '/users/:user_name' do
   user = User.find_by_user_name(params[:user_name])
+  @decks = Deck.all
   erb :'/user/profile'
 end
 
