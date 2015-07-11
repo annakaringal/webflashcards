@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto:300|Khula:800);
+@import url(http://fonts.googleapis.com/css?family=Roboto:300,800|Khula:800);
 
 body {
     font-family: Roboto;
@@ -15,6 +15,7 @@ th, td {border: 1px solid #ccc; padding: 0.3em;}
 th {background-color: #f0f0f0;}
 hr {border: none; border-top: 1px solid #E8F2F5; width: 100%;}
 del {text-decoration: line-through; color: #777777;}
+ul {padding-left: 0;}
 
 .toc li {list-style-type: none;}
 .todo {font-weight: bold; background-color: #f0ece8; color: #a03020;}
@@ -48,7 +49,7 @@ footer {
 }
 
 a {
-    color: #fff;
+    color: #007CA5;
     text-decoration: none;
 }
 
@@ -57,3 +58,69 @@ a:hover {
     text-decoration: underline;
 }
 
+.decks li {
+    list-style-type: none;
+    display: inline-block;
+    border: 1px solid black;
+    padding:20px;
+    background-color: #00A6E8;
+}
+
+.decks li:hover {
+    background-color: #8FBF00;
+}
+
+.decks li a {
+    font-weight:800;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    font-family: Khula, sans-serif;
+    color: #FCFCFF;
+    display: block;
+}
+
+.decks li a:hover {
+    text-decoration: none;
+    color:black;
+}
+
+.round h3 {
+    color: #007CA5
+}
+
+.round .card {
+    display:block;
+    padding:20px;
+    background-color:#ccc;
+}
+
+.round .summary {
+    font-size:1.2em;
+}
+
+.round .summary div{
+    display:block;
+    padding:10px;
+}
+
+.round .summary .question {
+    font-weight:800;
+    background-color:black;
+    color:#fff;
+}
+
+.round .summary .user_answer {
+    font-weight: bold;
+}
+
+.correct {
+    color: #8FBF00 ;
+}
+
+.incorrect {
+    color: #FF3535 ;
+}
+
+.play_again {
+    padding-top:30px;
+}

@@ -2,6 +2,10 @@ require 'pry'
 
 get '/rounds/:round_id/summary' do
   @round = Round.find_by(id: params[:round_id])
+
+  @correct_guesses = @round.guesses.where(correct: true).count
+  @total_cards_played = @round.guesses.count
+  
   erb :'round/show'
 end
 

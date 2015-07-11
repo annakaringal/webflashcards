@@ -1,10 +1,20 @@
-<h2> Here are your results! </h2>
+<div class="round">
+  <h3>DECK: <%= @round.deck.name %> </h3>
 
-<div class="round_summary"
-  <% @round.guesses.each do |guess| %>
-    <% card = guess.card %>
-    <div class="question"><%= card.question %></div>
-    <div class="answer"><%= card.answer %></div>
-    <div class="user_answer"><%= guess.user_answer %></div>
-  <% end %>
+  <h1>YOUR SCORE: <%= @correct_guesses %> / <%= @total_cards_played %> </h1>
+
+  <div class="summary">
+    <% @round.guesses.each do |guess| %>
+      <% card = guess.card %>
+      <div class="question"><%= card.question %></div>
+      <div class="answer"><b>CORRECT ANSWER:</b> <%= card.answer %></div>
+      <div class="user_answer"><b>YOUR ANSWER:</b> 
+        <span class="<%= correct_or_incorrect(guess) %> "><%= guess.user_answer %></span>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="play_again">
+<a href="/decks/<%= @round.deck.id %>">Try this deck again</a> | <a href="/users/<%= @round.user.user_name %>">Back to my dashboard</a>
 </div>
