@@ -35,7 +35,33 @@ post '/users/signup' do
 end
 
 get '/users/:user_name' do
-  user = User.find_by_user_name(params[:user_name])
+  require_login
+  @user = User.find_by_user_name(params[:user_name])
   erb :'/user/profile'
 end
 
+get '/users/:user_name/edit' do
+  require_login
+  @user = User.find_by_user_name(params[:user_name])
+  erb :'/user/edit'
+end
+
+put '/users/:user_name/edit' do
+  @user = User.find_by_user_name(params[:user_name])
+  @user.update(params[:password])
+  redirect '/users/#{user.user_name}'
+end
+
+get '/users/authentication/error' do
+  erb :'/user/error'
+end
+
+post '/users/authentication/error' do
+  user = User.find_by_user_name(params[:user_name])
+  if user && user.authenticate(params[:password])
+    session[:user_id] = user.id
+    redirect "/users/#{user.user_name}"
+  else
+    redirect "/"
+  end
+end

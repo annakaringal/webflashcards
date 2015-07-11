@@ -1,3 +1,23 @@
 <h2>User profile</h2>
 
+<a href="/users/<%=@user.user_name%>/edit">Edit Profile</a>
+
 <a href="/users/logout">Logout</a>
+
+<div class="decks">
+  <h3>Decks:</h3>
+<% deck = Deck.all %>
+<% deck.each do |deck| %>
+<p><%=deck.name%></p>
+<%end%>
+</div>
+
+
+<div class="rounds">
+  <h4>Rounds Played:</h4>
+<% @user.decks.each do |deck| %>
+  <p><%=deck.name%></p>
+  <%end%>
+</div>
+
+
