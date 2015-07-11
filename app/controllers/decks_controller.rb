@@ -1,4 +1,4 @@
- get '/deck/:deck_id' do
+ get '/decks/:deck_id' do
 
     deck = Deck.find_by(id: params[:deck_id])
     round = Round.new(deck_id: params[:deck_id],
@@ -11,6 +11,6 @@
 
     card = round.guesses.find_by(attempts: 0).first
 
-    redirect "/#{round.id}/#{card.id}"
+    redirect "/rounds/#{round.id}/#{card.id}"
 
  end

@@ -28,7 +28,8 @@ end
 post '/users/signup' do
   user = User.new(params[:user])
   if user.save
-    redirect '/users/login'
+    session[:user_id] = user.id
+    redirect "/users/#{user.user_name}"
   else
     redirect '/'
   end
