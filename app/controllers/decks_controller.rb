@@ -1,3 +1,4 @@
+require 'pry'
  get '/decks/:deck_id' do
 
     deck = Deck.find_by(id: params[:deck_id])
@@ -9,8 +10,7 @@
       round.guesses << Guess.new(card_id: card.id)
     end
 
-    card = round.guesses.find_by(attempts: 0).first
-
-    redirect "/rounds/#{round.id}/#{card.id}"
+    guess = round.guesses.find_by(attempts: 0)
+    redirect "/rounds/#{round.id}/#{guess.card_id}"
 
  end
