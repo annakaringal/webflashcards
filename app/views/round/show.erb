@@ -1,0 +1,10 @@
+<h2> Here are your results! </h2>
+
+<% @round.guesses.each do |guess| %>
+  <% card = guess.card %>
+  <%= card.question %>
+  <%= card.question %>
+  <%= guess.user_answer %>
+<% end %>
+
+
