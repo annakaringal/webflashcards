@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto:300|Khula:800);
+@import url(http://fonts.googleapis.com/css?family=Roboto:300,800|Khula:800);
 
 body {
     font-family: Roboto;
@@ -15,6 +15,7 @@ th, td {border: 1px solid #ccc; padding: 0.3em;}
 th {background-color: #f0f0f0;}
 hr {border: none; border-top: 1px solid #E8F2F5; width: 100%;}
 del {text-decoration: line-through; color: #777777;}
+ul {padding-left: 0;}
 
 .toc li {list-style-type: none;}
 .todo {font-weight: bold; background-color: #f0ece8; color: #a03020;}
@@ -83,12 +84,43 @@ a:hover {
     color:black;
 }
 
-.play_round h3 {
+.round h3 {
     color: #007CA5
 }
 
-.play_round .card {
+.round .card {
     display:block;
     padding:20px;
     background-color:#ccc;
+}
+
+.round .summary {
+    font-size:1.2em;
+}
+
+.round .summary div{
+    display:block;
+    padding:10px;
+}
+
+.round .summary .question {
+    font-weight:800;
+    background-color:black;
+    color:#fff;
+}
+
+.round .summary .user_answer {
+    font-weight: bold;
+}
+
+.correct {
+    color: #8FBF00 ;
+}
+
+.incorrect {
+    color: #FF3535 ;
+}
+
+.play_again {
+    padding-top:30px;
 }

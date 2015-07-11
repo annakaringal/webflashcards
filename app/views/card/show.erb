@@ -1,9 +1,13 @@
-<h1> </h1>
+<div class="round">
+  <h3>DECK: <%= @card.deck.name %> </h3>
 
-<div class='question'><%= @card.question %></div>
+  <div class="card">
+    <h1><%= @card.question %></h1>
 
-<form action='/guesses/<%= @guess.id %>' method='post' >
-  <input type='text' name='user_answer' placeholder='Type your answer' />
-  <input type='hidden' name='_method' value='put' />
-  <input type='submit' value='Submit' />
-</form>
+    <form action='/guesses/<%= @guess.id %>' method='post' >
+      <input type='text' name='user_answer' placeholder='Type your answer' />
+      <input type='hidden' name='_method' value='put' />
+      <input type='submit' value='Submit' />
+    </form>
+  </div>
+</div>
