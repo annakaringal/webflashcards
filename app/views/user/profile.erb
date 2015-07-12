@@ -1,5 +1,8 @@
 <h1>Welcome, <%= @user.user_name %>!</h1>
 
+<a href="/users/<%=@user.user_name%>/edit">Edit Profile</a>
+
+
 <h3>Choose a deck to begin playing:</h3>
 <div class="decks">
   <%= erb :'partials/_decks', :layout => false, :locals => { :decks => @decks }%>
@@ -7,3 +10,18 @@
 
 <div class="user_rounds">
 </div>
+
+  <h3>Rounds Played:</h3>
+  <table>
+    <thead></thead>
+      <% @user.rounds.each do |round| %>
+        <tr>
+          <td>
+            <%=round.deck.name%>
+          </td>
+          <td>
+            <%=round.created_at.asctime%>
+          </td>
+      <%end%>
+        </tr>
+  </table>

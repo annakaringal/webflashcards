@@ -1,0 +1,9 @@
+<h2>Change Password</h2>
+<form action="/users/<%=@user.user_name%>" method="post">
+  <input type='hidden' name='_method' value='put' />
+  <label for="password">Password:</label>
+  <input type="password" name="user[password]">
+  <input type="submit" value="Update">
+</form>
+
+<a href="/users/<%=@user.user_name%>">Back</a>
