@@ -28,6 +28,7 @@ get '/users/logout' do
 end
 
 get '/users/signup' do
+  @user = User.new
   erb :'user/signup'
 end
 
@@ -37,7 +38,7 @@ post '/users/signup' do
     session[:user_id] = @user.id
     redirect "/users/#{@user.user_name}"
   else
-    redirect '/users/signup'
+    erb :'user/signup'
   end
 end
 
