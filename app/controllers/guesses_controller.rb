@@ -1,16 +1,15 @@
 put '/guesses/:guess_id' do
   guess = Guess.find_by(id: params[:guess_id])
-
   guess.update(user_answer: params[:user_answer])
-
+  round = guess.round
   if guess.user_answer == guess.card.answer
     guess.correct = true
+    round.score +=1
+    round.save
   end
 
   guess.attempts += 1
   guess.save!
-
-  round = guess.round
   next_guess = round.guesses.find_by(attempts: 0)
 
   if next_guess

@@ -1,14 +1,14 @@
 <div class="round">
   <h3>DECK: <%= @round.deck.name %> </h3>
 
-  <h1>YOUR SCORE: <%= @correct_guesses %> / <%= @total_cards_played %> </h1>
+  <h1>YOUR SCORE: <%= @round.score %> / <%= @total_cards_played %> </h1>
 
   <div class="summary">
     <% @round.guesses.each do |guess| %>
       <% card = guess.card %>
       <div class="question"><%= card.question %></div>
       <div class="answer"><b>CORRECT ANSWER:</b> <%= card.answer %></div>
-      <div class="user_answer"><b>YOUR ANSWER:</b> 
+      <div class="user_answer"><b>YOUR ANSWER:</b>
         <span class="<%= correct_or_incorrect(guess) %> "><%= guess.user_answer %></span>
       </div>
     <% end %>

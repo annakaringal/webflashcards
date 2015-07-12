@@ -1,9 +1,15 @@
-<h2>NEW MEMEBERS!</h2>
+<h2>NEW MEMBERS!</h2>
+
+<% if @user && @user.errors.any? %>
+  <% @user.errors.each do |attribute, message| %>
+    <%= message %>
+  <%end %>
+<%end %>
 
 <form action="/users/signup" method="post">
   <label for="user_name">Username:</label>
   <input type="text" name="user[user_name]">
   <label for="password">Password:</label>
   <input type="password" name="user[password]">
-  <input type="submit" value="Log In">
+  <input type="submit" value="Sign Up">
 </form>

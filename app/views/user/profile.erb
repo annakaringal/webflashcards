@@ -20,6 +20,9 @@
             <%=round.deck.name%>
           </td>
           <td>
+            <%= round.score %> / <%= round.guesses.count %>
+          </td>
+          <td>
             <%=round.created_at.asctime%>
           </td>
       <%end%>

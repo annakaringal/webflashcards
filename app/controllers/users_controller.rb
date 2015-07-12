@@ -3,18 +3,24 @@ get '/' do
 end
 
 get '/users/login' do
+  @user = User.new
   erb :'user/login'
 end
 
 post '/users/login' do
-  user = User.find_by_user_name(params[:user_name])
-  if user && user.authenticate(params[:password])
-    session[:user_id] = user.id
-    redirect "/users/#{user.user_name}"
+  @user = User.find_by_user_name(params[:user_name])
+  if @user && @user.authenticate(params[:password])
+    session[:user_id] = @user.id
+    redirect "/users/#{@user.user_name}"
   else
-    redirect "/"
+    redirect "/users/password_error"
   end
 end
+
+get '/users/password_error' do
+  erb :'user/password_error'
+end
+
 
 get '/users/logout' do
   session[:user_id] = nil
@@ -26,12 +32,12 @@ get '/users/signup' do
 end
 
 post '/users/signup' do
-  user = User.new(params[:user])
-  if user.save
-    session[:user_id] = user.id
-    redirect "/users/#{user.user_name}"
+  @user = User.new(params[:user])
+  if @user.save
+    session[:user_id] = @user.id
+    redirect "/users/#{@user.user_name}"
   else
-    redirect '/'
+    redirect '/users/signup'
   end
 end
 
