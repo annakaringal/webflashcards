@@ -14,10 +14,20 @@
 
 
 <div class="rounds">
-  <h4>Rounds Played:</h4>
-<% @user.decks.each do |deck| %>
-  <p><%=deck.name%></p>
-  <%end%>
+  <h3>Rounds Played:</h3>
+  <table cellspacing="10  ">
+    <thead></thead>
+      <% @user.rounds.each do |round| %>
+        <tr>
+          <td>
+            <%=round.deck.name%>
+          </td>
+          <td>
+            <%=round.created_at.asctime%>
+          </td>
+      <%end%>
+        </tr>
+  </table>
 </div>
 
 

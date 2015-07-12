@@ -46,10 +46,10 @@ get '/users/:user_name/edit' do
   erb :'/user/edit'
 end
 
-put '/users/:user_name/edit' do
+put '/users/:user_name' do
   @user = User.find_by_user_name(params[:user_name])
-  @user.update(params[:password])
-  redirect '/users/#{user.user_name}'
+  @user.update(password: params[:password])
+  redirect "/users/#{@user.user_name}"
 end
 
 get '/users/authentication/error' do
