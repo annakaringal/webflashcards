@@ -16,7 +16,9 @@
     <div class="container">
 
       <ul class="nav navbar-nav navbar-right">
-      <% if current_user %>
+      <% if user = current_user %>
+        <li>
+          <a href="/users/<%=user.user_name%>/edit">Edit Profile</a>
         <li>
           <a href="/users/logout">Log Out</a>
         </li>
