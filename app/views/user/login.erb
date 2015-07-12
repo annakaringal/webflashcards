@@ -1,4 +1,12 @@
-<h1>Please Log In.</h1>
+<h1>Please Log In</h1>
+
+<% if @login_error %>
+    <div class="alert alert-danger" role="alert">
+        <ul>
+            <li class="text-danger"><%= @login_error %></li>
+        </ul>
+    </div>
+<%end %>
 
 <form action="/users/login" method="post">
   <label for="user_name">Username:</label>

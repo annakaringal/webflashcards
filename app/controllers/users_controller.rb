@@ -13,14 +13,10 @@ post '/users/login' do
     session[:user_id] = @user.id
     redirect "/users/#{@user.user_name}"
   else
-    redirect "/users/password_error"
+    @login_error = "Invalid username or password. Please try again."
+    erb :'/user/login'
   end
 end
-
-get '/users/password_error' do
-  erb :'user/password_error'
-end
-
 
 get '/users/logout' do
   session[:user_id] = nil
