@@ -74,3 +74,9 @@ post '/users/authentication/error' do
     redirect "/"
   end
 end
+
+delete '/users/:user_name' do
+  User.find_by_user_name(params[:user_name]).destroy
+  session[:user_id] = nil
+  redirect '/'
+end

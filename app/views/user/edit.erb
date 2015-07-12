@@ -6,4 +6,10 @@
   <input type="submit" value="Update">
 </form>
 
+<h4>Delete Account</h4>
+<form action="/users/<%=@user.user_name%>" method="post">
+  <input type="hidden" name="_method" value="delete"/>
+  <input type="submit" value="Delete"/>
+</form>
+
 <a href="/users/<%=@user.user_name%>">Back</a>
