@@ -2,7 +2,7 @@ put '/guesses/:guess_id' do
   guess = Guess.find_by(id: params[:guess_id])
   guess.update(user_answer: params[:user_answer])
   round = guess.round
-  if guess.user_answer == guess.card.answer
+  if guess.user_answer.downcase == guess.card.answer.downcase
     guess.correct = true
     round.score +=1
     round.save

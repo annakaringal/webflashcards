@@ -1,30 +1,41 @@
 <h1>Welcome, <%= @user.user_name %>!</h1>
 
-<a href="/users/<%=@user.user_name%>/edit">Edit Profile</a>
-
-
 <h3>Choose a deck to begin playing:</h3>
 <div class="decks">
   <%= erb :'partials/_decks', :layout => false, :locals => { :decks => @decks }%>
 </div>
 
-<div class="user_rounds">
+  <h3>Rounds Played:</h3>
+<div class="user_rounds headers">
+      <div class="played_round">
+        <div class="deck_name justleft">
+            Deck
+          </div>
+          <div class="round_score">
+            Score
+          </div>
+          <div class="played_at">
+            Date
+          </div>
+        </div>
+
 </div>
 
-  <h3>Rounds Played:</h3>
-  <table>
-    <thead></thead>
+
+<div class="user_rounds">
       <% @user.rounds.each do |round| %>
-        <tr>
-          <td>
+      <div class="played_round">
+        <div class="deck_name justleft">
             <%=round.deck.name%>
-          </td>
-          <td>
+          </div>
+          <div class="round_score">
             <%= round.score %> / <%= round.guesses.count %>
-          </td>
-          <td>
+          </div>
+          <div class="played_at">
             <%=round.created_at.asctime%>
-          </td>
+          </div>
+        </div>
       <%end%>
-        </tr>
-  </table>
+
+</div>
+

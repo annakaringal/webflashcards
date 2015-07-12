@@ -125,6 +125,34 @@ a:hover {
     padding-top:30px;
 }
 
-.stats {
+.user_rounds {
+    width: 50%;
+    margin:0 auto;
+}
 
+.headers {
+    background-color: black;
+    color: white;
+}
+
+.played_round {
+    border: 1px solid black;
+}
+
+.played_round div {
+    display: inline-block;
+    padding:5px;
+    margin:0;
+}
+
+.deck_name {
+    width:30%;
+}
+
+.round_score {
+    width:20%;
+}
+
+.played_at {
+    width:47%;
 }
