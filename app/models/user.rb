@@ -5,5 +5,6 @@ class User < ActiveRecord::Base
   has_many :guesses, through: :rounds
 
   validates :user_name, presence: true, uniqueness: true
-  validates :password, presence: true
+  # Having the next line in displays password error message twice
+  # validates :password, presence: true
 end
