@@ -1,21 +1,18 @@
-<h2>User profile</h2>
+<h1>Welcome, <%= @user.user_name %>!</h1>
 
 <a href="/users/<%=@user.user_name%>/edit">Edit Profile</a>
 
-<a href="/users/logout">Logout</a>
 
+<h3>Choose a deck to begin playing:</h3>
 <div class="decks">
-  <h3>Decks:</h3>
-<% deck = Deck.all %>
-<% deck.each do |deck| %>
-<p><%=deck.name%></p>
-<%end%>
+  <%= erb :'partials/_decks', :layout => false, :locals => { :decks => @decks }%>
 </div>
 
+<div class="user_rounds">
+</div>
 
-<div class="rounds">
   <h3>Rounds Played:</h3>
-  <table cellspacing="10  ">
+  <table>
     <thead></thead>
       <% @user.rounds.each do |round| %>
         <tr>
@@ -28,6 +25,3 @@
       <%end%>
         </tr>
   </table>
-</div>
-
-
