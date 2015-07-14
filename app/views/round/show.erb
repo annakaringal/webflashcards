@@ -4,6 +4,7 @@
   <h1>YOUR SCORE: <%= @round.score %> / <%= @total_cards_played %> </h1>
 
   <div class="summary">
+  <!-- ZM: SEE PR -->
     <% @round.guesses.each do |guess| %>
       <% card = guess.card %>
       <div class="question"><%= card.question %></div>
