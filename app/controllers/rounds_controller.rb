@@ -4,6 +4,7 @@ get '/rounds/:round_id/summary' do
   require_login
   @round = Round.find_by(id: params[:round_id])
 
+  #ZM: SEE PR 
   # @correct_guesses = @round.guesses.where(correct: true).count
   @total_cards_played = @round.guesses.count
 
